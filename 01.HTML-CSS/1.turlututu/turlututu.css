@@ -1,0 +1,163 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+/* header */
+
+header {
+    background-color: #333333;
+    padding: 15px 2rem;
+    display:flex;
+    justify-content:space-between;
+    color: white;
+}
+
+.nav-bar {
+    list-style-type: none;
+    display: flex;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+}
+
+/*  main */
+
+/* Frist section */
+
+.background-blue {
+    background-color: #0093c8;
+    color: white;
+}
+
+#presentation {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+   
+}
+
+.Turlu{
+    margin-left: 300px;
+    display: flex;
+    flex-direction:column;
+    align-items:center ;
+
+}
+
+.Turlu h1 {
+    font-size: 60px;
+    margin-bottom: 5px;
+}
+
+.Turlu h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.Turlu button {
+    background-color: #E99002;
+    font-size: 40px;
+    border-width: 2px;
+    border-radius: 9px;
+    padding: 10px 5px;
+    border-color: white;
+    cursor: pointer;
+}
+
+/* section 2; 4 */
+
+.quote h2 {
+    padding: 15px 0;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.border {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.474);
+}
+
+/* section 3 */
+
+.description {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 15%;
+}
+
+.description div {
+    width: 40%;
+    margin: 20px 30px 20px 30px;
+}
+
+.description h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/*   sectection 5 partner */
+
+article {
+    width: 65%;
+    margin: 80px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+article img {
+    height: 50px;
+    margin: 10px;
+}
+.partner div {
+    margin: 30px 0 100px 1000px;
+}
+
+.partner button {
+    background-color: #0093c8;
+    font-size: 20px;
+    border-width: 2px;
+    border-radius: 20px;
+    padding: 25px 35px;
+    border-color: white;
+    cursor: pointer;
+}
+
+.partner button:last-child{
+    background-color: #E99002;
+}
+
+
+/* footer */
+
+footer {
+    background-color: #333333;
+}
+
+.footer-bar {
+    list-style-type: none;
+    display: flex;
+    padding: 15px 10px;
+    padding-bottom: 35px;
+}
+
+.footer-bar a {
+    color: white;
+    text-decoration: none;
+    margin: 0.5rem;
+}
