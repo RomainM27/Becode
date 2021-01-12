@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+}
+body {
+  width: 90%;
+  margin: 0 auto;
+  background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-future-interstellar-smart-technology-background-intelligenceilluminatetechnologydynamicgridgradientbusinessblue-backgroundsquareinterstellarfuture-image_72288.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom right;
+}
+
+blockquote {
+  max-width: 45%;
+  margin: 0 auto;
+  font-size: 160%;
+  border-left: 3px solid firebrick;
+  padding-left: 30px;
+  background-color: rgb(165, 164, 164);
+}
+
+q {
+  padding: 0 80px;
+}
+
+p {
+  color: rgb(63, 0, 0);
+  font-family: serif;
+  font-size: 20px;
+}
+
+a:visited {
+  color: purple;
+}
+
+a:hover {
+  color: rgb(60, 255, 0);
+}
+
+.villager {
+  font-style: italic;
+  color: rgb(0, 187, 255);
+}
+
+.farmer {
+  font-style: italic;
+  color: rgb(0, 255, 106);
+}
+
+header > h1 {
+  background-color: yellowgreen;
+}
+
+.good {
+  text-transform: uppercase;
+  color: green;
+}
+
+.bad {
+  text-transform: uppercase;
+  color: red;
+}
+
+tr:nth-child(odd) {
+  /* impair */
+  background: grey;
+}
+
+tr:nth-child(even) {
+  background: white;
+}
+
+ul > li:first-of-type {
+  background-image: url(bien.png);
+  background-repeat: no-repeat;
+  padding: 30px 0 20px 50px;
+}
+
+ul > li:nth-child(3) {
+  background-image: url(mal.png);
+  background-repeat: no-repeat;
+  padding: 40px 0 20px 50px;
+}
+ul > li:nth-child(4) {
+  background-image: url(chat.png);
+  background-repeat: no-repeat;
+  padding: 40px 0 20px 50px;
+}
+
+p:first-of-type {
+  font-weight: bold;
+}
+
+img:first-of-type {
+  float: left;
+  margin-right: 20px;
+}
+.notification {
+  background: #ffffdd;
+  padding: 0.5rem 1rem;
+  border: 3px solid #ddddcc;
+  width: 250px;
+  font-weight: bold;
+  color: #333300;
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+}
