@@ -8,10 +8,21 @@
 }
 
 body {
-  min-height: 100vh;
+  display: grid;
+  grid-template-columns:  1fr 1fr 1fr 1fr ;
+  grid-template-rows: auto 1fr auto auto 50px;
+  grid-template-areas: 
+  "header header header header"
+  ". image tab ."
+  ". . . article"
+  ". good . ."
+  "footer footer footer footer";
+
 }
 header {
   background-color: #001e1f;
+  grid-area: header;
+
 }
 
 h1 {
@@ -28,16 +39,18 @@ blockquote {
   margin-left: 50%;
 }
 /*  Section tab_img */
-.tab_img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+table {
+  grid-area: tab;
+  justify-self:center;
+  align-self: center;
 }
 
-.tab_img img {
+.tab_img {
   width: 250px;
   margin: 80px;
   border-radius: 50px;
+  grid-area: image;
 }
 
 tr:nth-child(odd) {
@@ -50,7 +63,9 @@ tr:nth-child(odd) {
 }
 
 article {
-  margin-left: 70%;
+  grid-area: article;
+  justify-self:center;
+  align-self: center;
 }
 
 article h3 {
@@ -62,6 +77,7 @@ article h3 {
 .good_man {
   margin-top: 100px;
   text-align: center;
+  grid-area: good;
 }
 
 .good_man h3 {
@@ -79,6 +95,7 @@ footer {
   background-color: #001e1f;
   text-align: center;
   padding: 20px;
+  grid-area: footer;
 }
 
 footer p a {
