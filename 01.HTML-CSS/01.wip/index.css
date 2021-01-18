@@ -8,21 +8,10 @@
 }
 
 body {
-  display: grid;
-  grid-template-columns:  1fr 1fr 1fr 1fr ;
-  grid-template-rows: auto 1fr auto auto 50px;
-  grid-template-areas: 
-  "header header header header"
-  ". image tab ."
-  ". . . article"
-  ". good . ."
-  "footer footer footer footer";
-
+  min-height: 100vh;
 }
 header {
   background-color: #001e1f;
-  grid-area: header;
-
 }
 
 h1 {
@@ -38,29 +27,17 @@ blockquote {
   width: 50%;
   margin-left: 50%;
 }
-/*  Section  */
-
-table {
-  grid-area: tab;
-  justify-self:center;
-  align-self: center;
-  border-collapse: collapse;
-}
-
-td,
-tr,
-th {
-  border: 2px solid black;
-  padding: 5px;
-}
-
-
-
+/*  Section tab_img */
 .tab_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab_img img {
   width: 250px;
   margin: 80px;
   border-radius: 50px;
-  grid-area: image;
 }
 
 tr:nth-child(odd) {
@@ -73,14 +50,11 @@ tr:nth-child(odd) {
 }
 
 article {
-  grid-area: article;
-  justify-self:center;
-  align-self: center;
-  font-size: 20px;
+  margin-left: 70%;
 }
 
 article h3 {
-  font-size: 30px;
+  font-size: 25px;
   color: #38a5a8;
   margin-bottom: 10px;
 }
@@ -88,7 +62,6 @@ article h3 {
 .good_man {
   margin-top: 100px;
   text-align: center;
-  grid-area: good;
 }
 
 .good_man h3 {
@@ -106,12 +79,9 @@ footer {
   background-color: #001e1f;
   text-align: center;
   padding: 20px;
-  padding-bottom: 40px;
-  grid-area: footer;
 }
 
 footer p a {
   color: #38a5a8;
   text-decoration: none;
-  font-size: 20px;
 }
