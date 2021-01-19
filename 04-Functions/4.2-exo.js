@@ -1,4 +1,5 @@
 console.log("Un nombre aléatoire entre 0 et 10 :"+rand10()+" un 2eme :"+ rand10());
+
 /**
  * Calcul trandom
  * @param  {Number} max The max you want
@@ -6,7 +7,6 @@ console.log("Un nombre aléatoire entre 0 et 10 :"+rand10()+" un 2eme :"+ rand10
  * @return {Number}      a number between the max en min
  * (max - min) + min
  */
-
 function rand10() {
     return Math.floor(Math.random() * (10 - 0) + 0);
 }
