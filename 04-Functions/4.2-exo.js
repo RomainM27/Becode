@@ -8,6 +8,6 @@ console.log("Un nombre aléatoire entre 0 et 10 :"+rand10()+" un 2eme :"+ rand10
  * (max - min) + min
  */
 function rand10() {
-    return Math.floor(Math.random() * (10 - 0) + 0);
+    return Math.floor(Math.random() * (10 - 1) + 1);
 }
 

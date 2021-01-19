@@ -30,5 +30,5 @@ function multiRand(n) {
  * (max - min) + min
  */
 function rand10() {
-    return Math.floor(Math.random() * (10 - 0) + 0);
+    return Math.floor(Math.random() * (10 - 1) + 1);
 }

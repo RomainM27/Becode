@@ -12,6 +12,6 @@ if (min > max) {
 else if ( (current > min) && (max > current) ) {
     console.log('bg ');
 }
-esle{
+esle {
     console.log('pas bien ');
 }
