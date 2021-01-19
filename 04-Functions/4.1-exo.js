@@ -11,7 +11,7 @@ let width = new Number(readlineSync.question('width  '));
  * @return {Number}      the Surface
  */
 let calcSurface = (L , W) => {
-    return (L+W)*2;
+    return L*W;
 }
 
 console.log("The suface is "+ calcSurface(lenght,width));
