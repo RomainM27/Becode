@@ -1,3 +1,5 @@
+let allRect = [];
+
 class Rectangle {
     constructor (topLeftXPos,topLeftYPos,width,length){
         this.topLeftXPos=  topLeftXPos;
@@ -27,24 +29,43 @@ class Rectangle {
     }
 }
 
-let rect1 = new Rectangle(1,2,1,2);
+
 let i= 0;
-while  (i <= 1000) {
+while  (i <= 5) {
 
     i = i + 1;
 
-    rect2 = new Rectangle (
+    rect = new Rectangle (
         Math.floor(Math.random() * 100 ) + 1,
         Math.floor(Math.random() * 100 ) + 1,
         Math.floor(Math.random() * 100 ) + 1,
         Math.floor(Math.random() * 100 ) + 1
 
     )
-    console.log(rect2); 
-    let bool = rect1.collides(rect2);
-    rect1.collides(rect2);
-    console.log(bool);
+
+    allRect.push(rect);
 }
 
+console.log(allRect);
+
+colides(allRect);
 
 
+function colides(allRect) {
+
+    for (i = 0; i<allRect.length;i++) {
+
+        for (let j = 0; j < allRect.length; j++) {
+            console.log("-----");
+            console.log(" Rectangle "+i+ "\n");
+            console.log(allRect[i]);
+            console.log(allRect[i].collides(allRect[j]));
+
+            console.log(allRect[j]);
+            console.log("\n Rectangle "+j);
+            console.log("----");
+        
+        }
+    }
+
+}

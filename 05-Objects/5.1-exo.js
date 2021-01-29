@@ -15,6 +15,7 @@ function askTvSerie() {
         series.casters.push(caster);
         caster = readlineSync.question('The caster (enter / to quit): ');
     }while (caster != "/");
+    
     return series;
 }
 

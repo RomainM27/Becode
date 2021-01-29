@@ -1,4 +1,4 @@
-let pointA = [-2, 2];
+let pointA = [-2, 2]; // -2 x    2 y
 let pointB = [2, -2];
 
 console.log(calcDistance(pointA,pointB));

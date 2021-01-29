@@ -14,6 +14,7 @@ function min(arr){
     return Math.min(...arr);
 }
 
+// Need to understande this 
 function average(arr){
     return arr.reduce(function(a,b) {
         return a+b
