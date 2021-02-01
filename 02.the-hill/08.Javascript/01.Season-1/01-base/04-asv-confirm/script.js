@@ -7,4 +7,11 @@
     console.log('Hello Woods programmer');
 
     // YOUR CODE HERE
+    do {
+        let age = prompt("votre age");
+        let town = prompt("votre town");
+        let gender = prompt("votre gender");
+        alert (" votre age : "+age  + "\ntown : "+ town + "\n gener : "+gender)
+
+    }while(!(confirm("Est-ce bien vos choix ? " )))
 })();
