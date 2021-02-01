@@ -4,6 +4,9 @@
 
 (() => {
 
-    // your code here
+    Array.from(document.querySelectorAll('button')).forEach(button => 
+        button.addEventListener("click",
+         () => document.querySelector("body").style.backgroundColor = button.id));
+    
 
 })();

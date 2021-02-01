@@ -2,7 +2,7 @@
 
 (() => {
     let array = document.getElementById("numbers").value.split(",")
-    console.log(array)
+    
     // to get the value of an input: document.getElementById("element-id").value
 
     document.getElementById("run").addEventListener("click", () => {

@@ -4,6 +4,12 @@
 
 (() => {
 
+    const setBg = () => {
+        const randomColor = Math.floor(Math.random()*16777215).toString(16); // genere une couleur random grace a la base 16
+        document.body.style.backgroundColor = "#" + randomColor;
+      }
+      run.addEventListener("click", setBg);
+      setBg();
     // your code here
 
 })();
