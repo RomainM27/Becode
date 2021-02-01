@@ -11,5 +11,4 @@
       run.addEventListener("click", setBg);
       setBg();
     // your code here
-
 })();
