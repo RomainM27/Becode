@@ -7,5 +7,14 @@
   console.log('Hello Woods programmer');
 
   // YOUR CODE HERE
+  let answer = prompt(" tu veux tu du cake lo");
+  if (answer == "yes") {
+    alert(" Dommage j avais faim ");
+  }
+  else {
+  alert("merci je peux en manger plus");
+  }
+
+
 })();
 
