@@ -6,7 +6,9 @@
 
     // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
     let date = new Date();
-    if (date.getHours > 17 ) {
+    console.log(date)
+    console.log(date.getHours())
+    if (date.getHours() > 17 ) {
         document.getElementById("target").innerHTML = " good eve";
     }else {
         document.getElementById("target").innerHTML = "hello";
