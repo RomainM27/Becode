@@ -6,6 +6,8 @@
     console.log('%c ', 'padding: 38px; background:url(https://becode.org/app/uploads/2020/03/bc_mailsign_seal.png) no-repeat;');
     console.log('Hello Woods programmer');
 
+    let name = prompt("quel est ton nom ?");
+    alert("Hello , "+name);
     // YOUR CODE HERE
 })();
 
