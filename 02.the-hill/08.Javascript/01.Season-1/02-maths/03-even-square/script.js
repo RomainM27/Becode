@@ -5,7 +5,11 @@
 (() => {
 
     document.getElementById("run").addEventListener("click", () => {
-
+        let i = 0;
+        do {
+            console.log(i * i);
+            i++;
+        }while(i < 22);
         // your code here
 
     });
