@@ -6,13 +6,21 @@
         "Nicolas",
         "Nick",
         "Leny",
-        "Alexandre",
         "Charlène",
         "Laureline",
         "Esther",
         "Simon",
         "Lucas",
+        "Alexandre",
     ]);
 
     // your code here
+
+    document.getElementById("run").addEventListener("click", () => {
+        console.log(people.size);
+        if (people.has("Alexandre")) {
+            console.log(people)
+        }
+    })
+
 })();

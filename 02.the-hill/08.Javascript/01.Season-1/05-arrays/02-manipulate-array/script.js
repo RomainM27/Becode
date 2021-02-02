@@ -17,7 +17,7 @@
 
     // your code here
     let btn = document.getElementById("run");
-    btn.addEventListener("click",() =>ArrayMove(fruits));
+    btn.addEventListener("click", () => ArrayMove(fruits));
     
     /* btn.addEventListener("click", () =>{
     fruits.pop(),
@@ -43,6 +43,6 @@ function ArrayMove(fruits) {
 
     fruits.unshift('banana');
     
-    console.log(fruits)
+    console.log(fruits);
 
 }

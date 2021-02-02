@@ -112,6 +112,6 @@ function findPeople(item,index) {
 
 function nameCheck(firstname,lastname){
 
-    return lastname == 'Dupont' && firstname == "Jean";
+    return lastname == "Dupont" && firstname == "Jean";
 
 }

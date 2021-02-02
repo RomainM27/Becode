@@ -82,5 +82,13 @@
     ];
 
     // your code here
-
+    document.getElementById("run").addEventListener("click", () => {
+        let test = people.reduce(
+            (acc,valeurcour) => {
+                console.log(valeurcour.age);
+                console.log(acc);
+                return acc + valeurcour.age;
+            },0);
+            console.log(test)
+    });
 })();
