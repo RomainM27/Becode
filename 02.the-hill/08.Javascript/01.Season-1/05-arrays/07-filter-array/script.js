@@ -79,7 +79,17 @@
             age: 81,
         },
     ];
+    let ArrayMajeur = [];
 
     // your code here
-
+    document.getElementById("run").addEventListener("click", () => {
+        people.filter(people => {
+            if (people.age > 18){
+                ArrayMajeur.push(people);
+            }
+        })
+        console.log(ArrayMajeur)
+    }
+    )
 })();
+

@@ -3,6 +3,7 @@
 
 (() => {
 
+    
     let fruits = [
         "apple",
         "pear",
@@ -17,7 +18,14 @@
         "grap",
         "cherry",
     ];
-
+    let i=0;
+    document.getElementById("run").addEventListener("click", () => {
+        do {
+            console.log(fruits[i]);
+            i++
+        }while(i< fruits.length)
+    }
+    )
     // your code here
 
 })();

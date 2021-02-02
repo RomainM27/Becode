@@ -82,4 +82,36 @@
 
     // your code here
 
+    /*
+    document.getElementById("run").addEventListener("click", () => {
+        people.forEach(findPeople) 
+    }
+    )
+    */
+   
+    // mieux
+    document.getElementById("run").addEventListener("click", () => {
+        people.find(findPeople) 
+    }
+    )
 })();
+
+
+
+
+
+/**
+ *  1er test
+ * 
+ */
+function findPeople(item,index) {
+    if (nameCheck(item.firstname,item.lastname)) {
+        console.log(index);
+    }
+}
+
+function nameCheck(firstname,lastname){
+
+    return lastname == 'Dupont' && firstname == "Jean";
+
+}
