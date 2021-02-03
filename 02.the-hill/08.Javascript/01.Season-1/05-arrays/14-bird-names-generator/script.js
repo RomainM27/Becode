@@ -31,4 +31,28 @@
     ]);
 
     // your code here
+    
+    document.getElementById("run").addEventListener("click", () => { 
+    const ois = birds[Math.floor(Math.random() * birds.length)];
+    const ajd = Math.floor(Math.random() * adjectives.size);
+
+    let i = 0;
+    let ajdName;
+    for (const item of adjectives) {
+        if (i === ajd) {
+            ajdName = item;
+            break;
+        }
+        i++
+    }
+
+    document.getElementById('target').innerHTML = getTheName(ois, ajdName) ; 
+    
+    });
+
 })();
+
+
+function getTheName(ois, adj) {
+    return ois.fem ? 'La '+ois.name+ ' '+adj+'e' : 'Le '+ois.name+ ' '+adj;
+}
