@@ -13,4 +13,12 @@
 
     // your code here
 
+    let i = 1;
+    document.addEventListener("click", () => {
+        let img = document.querySelector("img[alt=Carousel]");
+        console.log(img);
+        i > (gallery.length-1) ? i = 0 : i;
+        img.src = gallery[i];
+        i++;
+    })
 })();

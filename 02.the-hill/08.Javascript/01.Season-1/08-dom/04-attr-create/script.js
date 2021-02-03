@@ -5,4 +5,11 @@
 
     // your code here
 
+    let dataImg = document.getElementById("source");
+    console.log(dataImg);
+    let targetimg = document.getElementById("target")
+    console.log(targetimg);
+    targetimg.style.backgroundImage = "url("+dataImg.dataset.image+")";
+    dataImg.remove();
+    
 })();
