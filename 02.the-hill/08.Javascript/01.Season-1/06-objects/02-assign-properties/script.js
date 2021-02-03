@@ -19,4 +19,12 @@
         user: null,
     };
     // your code here
+    
+    document.getElementById("run").addEventListener("click", () => {
+        computers.forEach(id => {
+            test = Object.assign({},defaultProps,id); 
+            Object.assign(id, test);
+        })
+        console.table(computers);
+    });
 })();
