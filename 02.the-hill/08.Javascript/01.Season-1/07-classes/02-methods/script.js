@@ -3,4 +3,16 @@
 
 (() => {
     // your code here
+    class Person {
+        constructor(firstname,lastname){
+            this.firstname = firstname;
+            this.lastname = lastname;
+        }
+        sayHello () {
+            console.log("hello, "+ this.firstname + " " + this.lastname)
+        }
+    }
+
+    let personne1 = new Person("Romain", "Mathieu");
+    personne1.sayHello();
 })();

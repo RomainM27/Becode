@@ -9,4 +9,7 @@
         }
     }
     // your code here
+    let skitty = new Cat("Skitty", 9);
+    let Pixel = new Cat("Pixel", 6)
+    console.log(skitty,Pixel)
 })();
