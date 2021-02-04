@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="container">
+        <div class="row">
+            <div class="col">
+                <form id="dice-form">
+                    <input type="checkbox" id="a" />
+                    <input type="checkbox" id="b" />
+                    <input type="checkbox" id="c" />
+                    <input type="checkbox" id="d" />
+                    <input type="checkbox" id="e" />
+                    <input type="submit" id="roll-button" />
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" id="dice-result">
+                <span id="a-result">a</span>
+                <span id="b-result">b</span>
+                <span id="c-result">c</span>
+                <span id="d-result">d</span>
+                <span id="e-result">e</span>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Access DOM elements
+        let a = document.getElementById("a");
+        let b = document.getElementById("b");
+        let c = document.getElementById("c");
+        let d = document.getElementById("d");
+        let e = document.getElementById("e");
+
+        let rollButton = document.getElementById("roll-button");
+        let diceForm = document.getElementById("dice-form");
+
+        console.log(a);
+        console.log(diceForm.children[0]);
+    </script>
+
+</body>
+
+</html>

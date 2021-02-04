@@ -17,7 +17,8 @@
     document.addEventListener("click", () => {
         let img = document.querySelector("img[alt=Carousel]");
         console.log(img);
-        i > (gallery.length-1) ? i = 0 : i;
+        i >= (gallery.length) ? i = 0 : i;
+        console.log(i)
         img.src = gallery[i];
         i++;
     })
