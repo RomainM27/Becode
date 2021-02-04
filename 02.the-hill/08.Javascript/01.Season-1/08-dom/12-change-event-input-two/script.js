@@ -4,6 +4,7 @@
 (() => {
 
     // your code here
+<<<<<<< HEAD
     let pass = document.getElementById("pass-one");
     let valid = document.getElementById("validity");
     validity
@@ -16,3 +17,7 @@
     
 })();
 
+=======
+
+})();
+>>>>>>> 483a70219c26a5ebfd388f5c373f93cab33c0080
