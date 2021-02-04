@@ -1,0 +1,66 @@
+@import 'mixin';
+
+body {
+    height: 100vh;
+    @include flexCenter(row);
+}
+
+article {
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    background: no-repeat url(/assets/image/Jeremy_Ferrari.jpg);
+    background-position: 30% 5%;
+    background-size: cover;
+
+    box-shadow:2px 2px 5px 1px rgba(0, 0, 0, 0.323);
+    //box-shadow:3px 3px 3px 1px rgba(0, 0, 0, 0.385);
+
+    container {
+        .photo {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            background-color: rgb(255, 102, 0);
+            padding: 10px;
+            color: white;
+        }
+        @include flexCenter(column);
+        align-items: flex-start;
+        position: absolute;
+        bottom: 0;
+        background: white;
+        width: 100%;
+        height: 40%;
+        color: black;   
+        padding: 1rem; 
+        h1 {
+            font-size: 2rem;
+            font-weight: normal;
+            margin: 0rem;
+            padding-bottom: 0.2rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: rgb(223, 75, 75);
+            font-weight: lighter;
+            margin: 0rem;
+        }
+        p {
+            display: none;
+        }
+        ul {
+            margin-top: 4rem;
+            list-style: none;
+            color: rgba(0, 0, 0, 0.549);
+            @include flexCenter(row);
+            li {
+                margin-right: 2rem;
+            }
+        }
+
+    }
+    &::before {
+        
+    }
+}
