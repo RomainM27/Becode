@@ -5,7 +5,6 @@
 
     // your code here
 
-<<<<<<< HEAD
     let passString = '' ;
     let pass = document.getElementById("pass-one")
     pass.addEventListener("keyup", () => {
@@ -17,6 +16,4 @@
         }   
 
     })
-=======
->>>>>>> 483a70219c26a5ebfd388f5c373f93cab33c0080
 })();
