@@ -4,21 +4,16 @@
 (() => {
     // your code here
     document.getElementById("run").addEventListener("click", () => {
- 
-
-        window.lib.getPosts().onreadystatechange = (event) => {
-            // XMLHttpRequest.DONE === 4
-            if (req.readyState === XMLHttpRequest.DONE) {
-                if (req.status === 200) {
-                    console.log("Réponse reçue: %s", req.responseText);
-                } else {
-                    console.log("Status de la réponse: %d (%s)", req.status, req.statusText);
-                }
+        window.lib.getPosts((error, articles) => {
+            try{
+                console.log(articles);
+             }catch{
+                console.log(error);
             }
-        };
-
-
-
+            // articles.forEach(element => {
+            //     console.log(element)
+            // });
+        });
     });
 })();
 
