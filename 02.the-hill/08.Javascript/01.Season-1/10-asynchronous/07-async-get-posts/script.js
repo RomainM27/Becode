@@ -3,4 +3,11 @@
 
 (() => {
     // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        getArticle();
+        async function getArticle () {
+            let art = await window.lib.getPosts()
+            console.log(art);
+        }
+    })
 })();
