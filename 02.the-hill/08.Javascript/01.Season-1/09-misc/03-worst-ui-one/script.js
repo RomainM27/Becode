@@ -4,5 +4,9 @@
 (() => {
 
     // your code here
+    let slider = document.getElementById("slider")
+    slider.addEventListener("change", () => {
+        document.getElementById("target").innerHTML = slider.value;
 
+    })
 })();
