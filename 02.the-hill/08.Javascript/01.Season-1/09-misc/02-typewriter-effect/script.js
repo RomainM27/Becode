@@ -22,7 +22,7 @@ const targetText = target.innerHTML;
 })();
 
 function alea(){
-    return Math.floor(Math.random() * (500 - 100)) + 100;
+    return Math.floor(Math.random() * (2000 - 100)) + 100;
 }
 
 
