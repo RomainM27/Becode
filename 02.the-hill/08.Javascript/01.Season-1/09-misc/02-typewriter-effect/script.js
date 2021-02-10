@@ -1,19 +1,28 @@
 // 09-misc/02-typewriter-effect/script.js - 9.2: typewriter effect
 
-
+const target = document.getElementById("target");
+const targetText = target.innerHTML;
 (() => {
-
-    // your code here
-    let target = document.getElementById("target");
-    let targetText = target.innerHTML;
-    target.innerHTML = '';
-    console.log(targetText)
-    let id = setInterval(() => {
-        for (let i = 0; i < targetText.length; i++) {
-            console.log(targetText[i])
-            if (i === 50){
-                clearInterval(id)
-            }
+    // recursive function, i dont use that i the other exercice, think its the best
+    function typeWriter() {
+        let timer = alea()
+        if (cpt < targetText.length){
+            target.innerHTML += targetText.charAt(cpt);
+            cpt++;
+            setTimeout(typeWriter, timer);
         }
-    }, 1000);
+    }
+    
+    // your code here
+
+    target.innerHTML = '';
+    let  cpt=0;
+    console.log(targetText)
+    typeWriter()
 })();
+
+function alea(){
+    return Math.floor(Math.random() * (500 - 100)) + 100;
+}
+
+

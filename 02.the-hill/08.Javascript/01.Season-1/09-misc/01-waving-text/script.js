@@ -7,54 +7,33 @@ const targetString = target.textContent;
     // your code here
 
     target.innerHTML = '';
+    target.style.textAlign = "left";
     console.log(targetString);
-    console.log(targetString.length);
+    let sens = "down"
+    i=0;
 
-    //createSpan() // create span
-    //waving()
-    let span;
-    let spantext = "";
-    for (let i = 0; i < targetString.length; i++) {
-        //targetString.length\
-        (function(i){
-            setTimeout( () => {
-            span = document.createElement("span");
-            spantext = document.createTextNode(targetString[i]);
-            span.appendChild(spantext);
-            console.log(span)
-            target.appendChild(span);
-            },8000)
-        })(i);
-    }
- 
+    targetInner = ""
+    let fontSi = 26;
+
+    let wave = setInterval( () => {
+        if (i == (targetString.length -1)){
+            clearInterval(wave);
+        }
+        switch (fontSi) {
+            case 30: fontSi=26; sens = "down"; break;
+            case 10: fontSi=14; sens = "up"; break;
+            default: if(sens=="down"){fontSi -= 4;}else{fontSi +=4;}; break;
+        }
+
+        targetInner += spanString(targetString[i], fontSi);
+        target.innerHTML=targetInner;
+        i++;
+        },100)
     
 })();
 
-/*
-function createSpan() {
-    let span;
-    let spantext = "";
-    for (let i = 0; i < targetString.length; i++) {
-        span = document.createElement("span");
-        spantext = document.createTextNode(targetString[i]);
-        span.appendChild(spantext);
-        target.appendChild(span);
-    }
+function spanString(letter, taille){
+    return `<span style="font-size:${taille}px">${letter}</span>`
 }
 
-function waving() {
-    let span;
-    let spantext = "";
-    for (let i = 0; i < targetString.length; i++) {
-        //targetString.length\
-        setTimeout( () => {
-        span = document.createElement("span");
-        spantext = document.createTextNode(targetString[i]);
-        span.appendChild(spantext);
-        console.log(span)
-        target.appendChild(span);
-        },8000)
-    }
- 
-}
-*/
+
