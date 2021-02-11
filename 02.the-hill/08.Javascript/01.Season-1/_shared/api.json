@@ -4,13 +4,20 @@
       "id": 1,
       "name": "Cyclops",
       "alterEgo": "Scott Summers",
-      "abilities": ["Optic force blasts", "Master tactician"]
+      "abilities": [
+        "Optic force blasts",
+        "Master tactician"
+      ]
     },
     {
       "id": 2,
       "name": "Marvel Girl",
       "alterEgo": "Jean Grey",
-      "abilities": ["Telekinesis", "Telepathy", "Astral projection"]
+      "abilities": [
+        "Telekinesis",
+        "Telepathy",
+        "Astral projection"
+      ]
     },
     {
       "id": 3,
@@ -38,6 +45,15 @@
       "abilities": [
         "Cold and ice manipulation",
         "Ability to assume an enhanced physical form made of solid ice"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Romain",
+      "alterEgo": "BestProgrammer",
+      "abilities": [
+        "FastCoding",
+        "logic++"
       ]
     }
   ]

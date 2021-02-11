@@ -3,4 +3,10 @@
 
 (() => {
     // your code here
+    document.getElementById("run").addEventListener("click", async () =>{
+        let hero_id = document.getElementById("hero-id").value;
+        fetch(`http://localhost:3000/heroes/${hero_id}`,{
+            method: 'DELETE',
+        })        
+    })
 })();
