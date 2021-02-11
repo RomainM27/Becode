@@ -1,6 +1,7 @@
 // 09-misc/02-typewriter-effect/script.js - 9.2: typewriter effect
 
 const target = document.getElementById("target");
+target.style.textAlign = "left";
 const targetText = target.innerHTML;
 (() => {
     // recursive function, i dont use that i the other exercice, think its the best
@@ -22,7 +23,8 @@ const targetText = target.innerHTML;
 })();
 
 function alea(){
-    return Math.floor(Math.random() * (2000 - 100)) + 100;
+
+    return Math.floor(Math.random() * (200 - 50)) + 100;
 }
 
 
