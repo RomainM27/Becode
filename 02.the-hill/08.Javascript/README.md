@@ -3,15 +3,16 @@
 ## Series
 
 - [Season 1](./01.Season-1)
-- [Season 2 ...comming soon]()
+- [Season 2](./02.Season-2)
 
 ## Challenges
 
-- [JS-Challenges ...comming soon]()
+- [Hangman](./Challenge/hangman.md)
+- [Clicker](./Challenge/cookie.md)
 
 ## Optional
 
-- [Optional](./04.Optional)
+- [Optional](./Optional)
 
 ## Resources
 
