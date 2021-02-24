@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        html {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+            color: white;
+            width: 100vw;
+            height: 100vh;
+            background: -webkit-linear-gradient(-46deg, rgb(157, 250, 141), rgb(68, 249, 255));
+            background: linear-gradient(-46deg, rgb(157, 250, 141), rgb(68, 249, 255));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        blockquote {
+            font-size: 40px;
+            max-width: 800px;
+        }
+
+        .author {
+            font-size: 20px;
+            margin-left: 45%;
+        }
+
+        #author {
+            font-size: 16px;
+        }
+
+        img {
+            max-width: 300px;
+        }
+    </style>
+    <main>
+        <blockquote id="quote">test</blockquote>
+        <div class="author">- <span id="author"></span>
+        </div>
+        <div id="img"></div>
+
+    </main>
+    <script>
+        window.onload = function () {
+            async function getData() {
+                const response = await fetch('https://thatsthespir.it/api');
+
+                if (!response.ok) {
+                    const message = `An error has occured: ${response.status}`;
+                    throw new Error(message);
+                }
+
+                const data = await response.json();
+                return data;
+            }
+
+            getData()
+
+                .then(data => {
+                    document.getElementById("quote").innerHTML = data.quote;
+                    document.getElementById("author").innerHTML = data.author;
+                    document.getElementById("img").innerHTML = `<img src='${data.photo}' alt='photo'>`
+                    console.log(data)
+                })
+                .catch(error => {
+                    error.message; // 'An error has occurred: 404'
+                });
+
+        }
+    </script>
+</body>
+
+</html>
