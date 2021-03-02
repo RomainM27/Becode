@@ -29,6 +29,12 @@ let removeNullElements = (array) => {
             arrayOfNanNull.push(ele)
         }
     });
+    /*
+    let vowel = /^[aeiou]/i;
+    let select = array.filter(arr => vowel.test(arr));
+
+    return select;
+    */
     return arrayOfNanNull
 }
 
@@ -42,6 +48,11 @@ let removeNullAndFalseElements = (array) => {
         }
     });
     return arrayOfNanNull
+    /*
+    return array.filter(function(a) {
+        return a === 0 || a;
+    });
+    */
 }
 
 let reverseWordsInArray = (array) => {
@@ -204,7 +215,6 @@ let getDomainName = (string) => {
     let array = string.split("@");
     let domain = array[1] ;
     let i = array[1].length;
-    console.log(i)
     do{ 
         if (domain[i] === "."){
             break
@@ -220,7 +230,8 @@ let titleize = (string) => {
 }
 
 let checkForSpecialCharacters = (string) => {
-    return 'Write your method here';
+    let pattern =  /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/; // recherche s il y a un caractere speciale
+    return pattern.test(string);
 }
 
 let squareRoot = (number) => {
@@ -236,7 +247,17 @@ let factorial = (number) => {
 }
 
 let findAnagrams = (string) => {
-    return 'Write your method here';
+    return anagram(string);
+
+    function anagram(str) {
+        if (str.length === 1) return str;
+        let anagrams = [];
+        [...str].map((el) => {
+        [...anagram(str.slice(1, str.length))].map((w) => anagrams.push(el + w));
+        str = str.substr(1, str.length - 1) + el;
+        });
+        return anagrams;
+    }
 }
 
 let convertToCelsius = (number) => {
