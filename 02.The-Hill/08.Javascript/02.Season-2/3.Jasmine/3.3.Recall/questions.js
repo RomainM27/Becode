@@ -141,43 +141,78 @@ let getElementsUntilGreaterThanFive = (array) => {
 }
 
 let convertArrayToObject = (array) => {
-    object = Object.assign(...array.map(v,w => ({ [v]: w })));
-    return object;
+    let arraytest =[]
+    for (let i = 0; i < array.length; i+=2) {
+        arraytest.push([array[i], array[i+1]])
+    }
+    let obj = Object.fromEntries(arraytest);
+    return obj
 }
 
 let getAllLetters = (array) => {
     let arrayOfWord = []
     let arrayOfWords = []
     array.forEach(ele =>{
-        arrayOfWord.push(ele.split(''))
-        arrayOfWord.forEach(ele => arrayOfWords.push(ele))
+        arrayOfWord.push(ele.split('')); // split les mots
     })
-    //arrayOfWords.split(",")
-    return arrayOfWords;
+    arrayOfWords = arrayOfWord.reduce((a,b) =>{ //pour les differents tableau et le reunis avec concat
+        return a.concat(b);
+    })
+    arrayOfWords= arrayOfWords.filter((item,index) => arrayOfWords.indexOf(item) == index); // supp les doublons
+    return arrayOfWords.sort();
 }
 
 let swapKeysAndValues = (object) => {
-    return 'Write your method here';
+    let objectSwap = new Object // cree un obj
+    for (const key in object) { // parcour l obj
+        objectSwap[object[key]] = key;  // nouvelle valeur dans obectSwap qui est la value de key = key
+        }
+    return objectSwap;
 }
 
+
+
 let sumKeysAndValues = (object) => {
-    return 'Write your method here';
+    let compt = 0; 
+    for (const key in object) { // parcour l obj
+        compt += parseInt(object[key]) + parseInt(key);
+        }
+    return compt;
+
 }
 
 let removeCapitals = (string) => {
-    return 'Write your method here';
+    let newSting = string.replace(/[A-Z]/g, '');
+    return newSting;
 }
 
 let roundUp = (number) => {
-    return 'Write your method here';
+    return Math.ceil(number);
 }
 
 let formatDateNicely = (date) => {
-    return 'Write your method here';
+    let dateFormat = date.toLocaleString("fr-Fr", {
+        month: 'numeric', 
+        day: 'numeric',
+        year: 'numeric',
+    })
+    //console.log(dateFormat)
+    return dateFormat;
 }
 
 let getDomainName = (string) => {
-    return 'Write your method here';
+    let array = string.split("@");
+    let domain = array[1] ;
+    let i = array[1].length;
+    console.log(i)
+    do{ 
+        if (domain[i] === "."){
+            break
+        } 
+        domain = domain.substr(0,i)
+        i--;
+    } while(true)
+    return  domain = domain.substr(0,i);
 }
 
 let titleize = (string) => {
@@ -189,11 +224,15 @@ let checkForSpecialCharacters = (string) => {
 }
 
 let squareRoot = (number) => {
-    return 'Write your method here';
+    return Math.sqrt(number);
 }
 
 let factorial = (number) => {
-    return 'Write your method here';
+    let fact= 1 ;
+    for (let i = 1; i <= number; i++) {
+        fact = fact*i
+    }
+    return fact;
 }
 
 let findAnagrams = (string) => {
