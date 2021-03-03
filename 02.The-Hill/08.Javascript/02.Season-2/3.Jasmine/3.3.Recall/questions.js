@@ -79,12 +79,17 @@ let addElementToBeginning = (array, element) => {
 }
 
 let sortByLastLetter = (array) => {
+    return array.sort(
+        (a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1)
+    );
+    /*
     function endComparator(a,b) {
         if (a.slice(-1) < b.slice(-1)) return -1;
         if (a.slice(-1) > b.slice(-1)) return 1;
         return 0;
     }
     return array.sort(endComparator);
+    */
 }
 
 let getFirstHalf = (string) => {
@@ -166,9 +171,11 @@ let getAllLetters = (array) => {
     array.forEach(ele =>{
         arrayOfWord.push(ele.split('')); // split les mots
     })
+
     arrayOfWords = arrayOfWord.reduce((a,b) =>{ //pour les differents tableau et le reunis avec concat
         return a.concat(b);
     })
+
     arrayOfWords= arrayOfWords.filter((item,index) => arrayOfWords.indexOf(item) == index); // supp les doublons
     return arrayOfWords.sort();
 }
@@ -226,7 +233,15 @@ let getDomainName = (string) => {
 }
 
 let titleize = (string) => {
-    return 'Write your method here';
+    return string
+        .split(/the\s|and\s/g)
+        .map((el) => el.charAt(0).toUpperCase() + el.slice(1))
+        .join("the ")
+        .replace("the the", "and the")
+        .split(". ")
+        .map((el) => el.charAt(0).toUpperCase() + el.slice(1))
+        .join(". ");
+    
 }
 
 let checkForSpecialCharacters = (string) => {
@@ -250,20 +265,21 @@ let findAnagrams = (string) => {
     return anagram(string);
 
     function anagram(str) {
-        if (str.length === 1) return str;
-        let anagrams = [];
-        [...str].map((el) => {
+      if (str.length === 1) return str;
+      let anagrams = [];
+      [...str].map((el) => {
         [...anagram(str.slice(1, str.length))].map((w) => anagrams.push(el + w));
         str = str.substr(1, str.length - 1) + el;
-        });
-        return anagrams;
+      });
+      return anagrams;
     }
 }
 
+
 let convertToCelsius = (number) => {
-    return 'Write your method here';
+    return Math.round((number - 32) * 5/9);
 }
 
 let letterPosition = (array) => {
-    return 'Write your method here';
+    return array.map((el) => el.toUpperCase().charCodeAt(0) - 64);
 }
