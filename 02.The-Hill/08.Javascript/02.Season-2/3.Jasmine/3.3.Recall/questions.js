@@ -196,7 +196,6 @@ let sumKeysAndValues = (object) => {
         compt += parseInt(object[key]) + parseInt(key);
         }
     return compt;
-
 }
 
 let removeCapitals = (string) => {

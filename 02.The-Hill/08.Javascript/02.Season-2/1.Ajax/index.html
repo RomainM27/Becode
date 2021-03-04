@@ -76,7 +76,12 @@
                 .then(data => {
                     document.getElementById("quote").innerHTML = data.quote;
                     document.getElementById("author").innerHTML = data.author;
-                    document.getElementById("img").innerHTML = `<img src='${data.photo}' alt='photo'>`
+                    console.log(data.photo)
+                    if (data.photo) {
+
+                        document.getElementById("img").innerHTML = `<img src='${data.photo}' alt='photo'>`
+                    }
+
                     console.log(data)
                 })
                 .catch(error => {
