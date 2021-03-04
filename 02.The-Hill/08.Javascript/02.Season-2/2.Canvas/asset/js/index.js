@@ -12,11 +12,11 @@ window.onload = () => {
     let ImageDemon2 = new Image();
     let allMonsters = [ImageDemon0, ImageDemon1, ImageDemon2]
     function init() {
-        ImageDemon0.src= 'demons0.png';
-        ImageDemon1.src= 'demons1.png';
-        ImageDemon2.src= 'demons2.png';
-        ImageCannon.src= 'canon 40px.png';
-        ImageProjectile.src= 'boulet.png';
+        ImageDemon0.src= './asset/img/demons0.png';
+        ImageDemon1.src= './asset/img/demons1.png';
+        ImageDemon2.src= './asset/img/demons2.png';
+        ImageCannon.src= './asset/img/canon 40px.png';
+        ImageProjectile.src= './asset/img/boulet.png';
         requestAnimationFrame(update);
     }
 
@@ -28,7 +28,7 @@ window.onload = () => {
             if (KeyPress['ArrowLeft'] && canon.x > 0) {
                 canon.x -= 2;
             }
-            if (KeyPress['ArrowRight'] && canon.x < 620) {
+            if (KeyPress['ArrowRight'] && canon.x < height-30) {
                 canon.x += 2;
             }
         },
@@ -64,7 +64,7 @@ window.onload = () => {
 
     // monster
     monster = {
-        x : Math.floor(Math.random() * 621),
+        x : Math.floor(Math.random() * (height - 29)),
         y : Math.floor(Math.random() * 400),
         w : 30,
         h : 30,
@@ -73,7 +73,7 @@ window.onload = () => {
             ctx.drawImage(monster.image, monster.x, monster.y ,monster.w ,monster.h );
             
             if ( (monster.x + monster.w  >= projectile.x && projectile.x + projectile.w >= monster.x) && (monster.y >= projectile.y  - projectile.h && projectile.y >= monster.y - monster.h) ){ // check if the ball touch the demons
-                monster.x = Math.floor(Math.random() * 621); 
+                monster.x = Math.floor(Math.random() * (height - 29)); 
                 monster.y = Math.floor(Math.random() * 400);
                 monster.image = allMonsters[Math.floor(Math.random() * allMonsters.length)]; // random demons
                 projectile.isMoving = false; // le conon ne bouge plus (donc plus draw)

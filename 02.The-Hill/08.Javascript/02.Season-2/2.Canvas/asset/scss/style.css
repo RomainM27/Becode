@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: normal;
+}
+
+html {
+  min-height: 100vh;
+}
+
+main {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #score {
+  width: 300px;
+  height: 650px;
+  background-color: green;
+}
+
+main #canvas canvas {
+  position: relative;
+  border: 1px solid black;
+  background-color: #aeceae;
+}
+
+main #gameinfo {
+  height: 650px;
+  width: 300px;
+  background-color: green;
+}
+/*# sourceMappingURL=style.css.map */
