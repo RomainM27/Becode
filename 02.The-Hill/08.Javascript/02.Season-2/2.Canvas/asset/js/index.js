@@ -3,7 +3,22 @@ window.onload = () => {
     const width = c.width;
     const height = c.height;
     let ctx = c.getContext("2d");
-    KeyPress = {}; // to get the key press
+    // variable
+    let timer = 0;
+    let play = false;
+    let countMiss = 0; // mis shoot
+    let countHit = 0; // good shoot
+    let nbrPartie = 0;
+    let time = 30;
+    let winOrLoose = "";
+    // what we need in document
+    let timerInhtml = document.getElementById("timer");
+    let startButton = document.getElementById("start");
+    let hits = document.getElementById("hits");
+    let miss = document.getElementById("miss");
+    let listOfScore = document.getElementById("listOfScore");
+
+    // image
     let ImageCannon = new Image();
     let ImageProjectile = new Image();
     //les demons
@@ -11,6 +26,7 @@ window.onload = () => {
     let ImageDemon1 = new Image();
     let ImageDemon2 = new Image();
     let allMonsters = [ImageDemon0, ImageDemon1, ImageDemon2]
+
     function init() {
         ImageDemon0.src= './asset/img/demons0.png';
         ImageDemon1.src= './asset/img/demons1.png';
@@ -20,6 +36,7 @@ window.onload = () => {
         requestAnimationFrame(update);
     }
 
+    KeyPress = {}; // to get the key press
     // canon
     canon = {
         x: width/2 ,
@@ -50,6 +67,8 @@ window.onload = () => {
                 if(projectile.y < 0){
                     projectile.isMoving = false;
                     projectile.y = canon.y-10;
+                    countMiss++;
+                    miss.children[0].innerHTML = countMiss;
                 }
             }else{
                 projectile.x =canon.x+10  
@@ -78,6 +97,12 @@ window.onload = () => {
                 monster.image = allMonsters[Math.floor(Math.random() * allMonsters.length)]; // random demons
                 projectile.isMoving = false; // le conon ne bouge plus (donc plus draw)
                 projectile.y = canon.y-10; // reinitialise sa position
+                countHit++;
+                hits.children[0].innerHTML = countHit;
+                if (countHit == 3){
+                    winOrLoose = "WINN !";
+                    endGame();
+                }
             }
         }
     }
@@ -108,12 +133,52 @@ window.onload = () => {
 
 
     function update() {
-        draw();
+        if (play){
+            draw();
         listenKeyboard();
         canon.update();
         projectile.update();
         requestAnimationFrame(update);
+        }
     };
 
-    init()
+    // met les variables a zero
+    function resetVarr() { 
+        countHit = 0;
+        countMiss = 0;
+    }
+
+    function endGame() { 
+        play = false;
+        clearInterval(timer);
+        displayScore()
+        ctx.clearRect(0,0, width, height);
+        startButton.disabled = false;
+        resetVarr()
+    }
+
+    function displayScore() {
+        listOfScore.innerHTML += `<div><span class="partieNumb">${nbrPartie}</span> Hit :<span class="hits">${countHit}</span>
+        Miss : <span class="missNbr">${countMiss}</span> Time : <span>${time}</span>
+        <span>WIN !</span>
+        </div>`;
+    }
+
+    // game start
+    startButton.addEventListener("click", () => {
+        play = true;
+        nbrPartie++;
+        init();
+        timer = setInterval(myTimer, 1000);
+        startButton.disabled = true;
+    })
+    function myTimer() {
+        timerInhtml.children[0].innerHTML = time;
+        if(time == 0){
+            clearInterval(timer);
+            winOrLoose = "LOOSE !";
+            endGame();
+        }
+        time--; 
+    }
 }
