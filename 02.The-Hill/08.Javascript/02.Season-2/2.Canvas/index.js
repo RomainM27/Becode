@@ -3,14 +3,14 @@ window.onload = () => {
     const width = c.width;
     const height = c.height;
     let ctx = c.getContext("2d");
-    KeyPress = {};
+    KeyPress = {}; // to get the key press
     let ImageCannon = new Image();
     let ImageProjectile = new Image();
     //les demons
     let ImageDemon0 = new Image();
     let ImageDemon1 = new Image();
     let ImageDemon2 = new Image();
-
+    let allMonsters = [ImageDemon0, ImageDemon1, ImageDemon2]
     function init() {
         ImageDemon0.src= 'demons0.png';
         ImageDemon1.src= 'demons1.png';
@@ -25,11 +25,11 @@ window.onload = () => {
         x: width/2 ,
         y: height-50 ,
         update: () => {
-            if (KeyPress['ArrowLeft']) {
-                canon.x -= 1;
+            if (KeyPress['ArrowLeft'] && canon.x > 0) {
+                canon.x -= 2;
             }
-            if (KeyPress['ArrowRight']) {
-                canon.x += 1;
+            if (KeyPress['ArrowRight'] && canon.x < 620) {
+                canon.x += 2;
             }
         },
         draw: () => {
@@ -46,13 +46,13 @@ window.onload = () => {
         isMoving : false,
         update: () => {
             if(projectile.isMoving){
-                projectile.y -= 2;
+                projectile.y -= 3;
+                if(projectile.y < 0){
+                    projectile.isMoving = false;
+                    projectile.y = canon.y-10;
+                }
             }else{
                 projectile.x =canon.x+10  
-            }
-            if(projectile.y < 0){
-                projectile.isMoving = false;
-                projectile.y = canon.y-10
             }
         },
         draw: () => {
@@ -68,8 +68,17 @@ window.onload = () => {
         y : Math.floor(Math.random() * 400),
         w : 30,
         h : 30,
+        image : ImageDemon0,
         draw: () => {
-            ctx.drawImage(ImageDemon0, monster.x, monster.y ,monster.w ,monster.h );
+            ctx.drawImage(monster.image, monster.x, monster.y ,monster.w ,monster.h );
+            
+            if ( (monster.x + monster.w  >= projectile.x && projectile.x + projectile.w >= monster.x) && (monster.y >= projectile.y  - projectile.h && projectile.y >= monster.y - monster.h) ){ // check if the ball touch the demons
+                monster.x = Math.floor(Math.random() * 621); 
+                monster.y = Math.floor(Math.random() * 400);
+                monster.image = allMonsters[Math.floor(Math.random() * allMonsters.length)]; // random demons
+                projectile.isMoving = false; // le conon ne bouge plus (donc plus draw)
+                projectile.y = canon.y-10; // reinitialise sa position
+            }
         }
     }
 
@@ -108,11 +117,3 @@ window.onload = () => {
 
     init()
 }
-
-
-/*
-left = 37
-up = 38
-right = 39
-down = 40
-*/
