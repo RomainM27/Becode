@@ -68,7 +68,7 @@ window.onload = () => {
                     projectile.isMoving = false;
                     projectile.y = canon.y-10;
                     countMiss++;
-                    miss.children[0].innerHTML = countMiss;
+                    miss.children[1].innerHTML = countMiss;
                 }
             }else{
                 projectile.x =canon.x+10  
@@ -98,8 +98,8 @@ window.onload = () => {
                 projectile.isMoving = false; // le conon ne bouge plus (donc plus draw)
                 projectile.y = canon.y-10; // reinitialise sa position
                 countHit++;
-                hits.children[0].innerHTML = countHit;
-                if (countHit == 3){
+                hits.children[1].innerHTML = countHit;
+                if (countHit == 10){
                     winOrLoose = "WINN !";
                     endGame();
                 }
@@ -146,6 +146,7 @@ window.onload = () => {
     function resetVarr() { 
         countHit = 0;
         countMiss = 0;
+        time = 30;
     }
 
     function endGame() { 
@@ -155,12 +156,13 @@ window.onload = () => {
         ctx.clearRect(0,0, width, height);
         startButton.disabled = false;
         resetVarr()
+        timerInhtml.children[1].innerHTML = time;
     }
 
     function displayScore() {
-        listOfScore.innerHTML += `<div><span class="partieNumb">${nbrPartie}</span> Hit :<span class="hits">${countHit}</span>
-        Miss : <span class="missNbr">${countMiss}</span> Time : <span>${time}</span>
-        <span>WIN !</span>
+        listOfScore.innerHTML += `<div><span class="partieNumb">${nbrPartie}</span><span class="hits"> Hit : ${countHit}</span>
+        <span class="missNbr"> Miss : ${countMiss}</span><span> Time : ${time}</span>
+        <span> WIN !</span>
         </div>`;
     }
 
@@ -173,7 +175,7 @@ window.onload = () => {
         startButton.disabled = true;
     })
     function myTimer() {
-        timerInhtml.children[0].innerHTML = time;
+        timerInhtml.children[1].innerHTML = time;
         if(time == 0){
             clearInterval(timer);
             winOrLoose = "LOOSE !";

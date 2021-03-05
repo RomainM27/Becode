@@ -9,40 +9,126 @@
 
 html{
     min-height: 100vh;
+    font-size: 62.5%;
 }
 main {
+    margin: 0 auto;
+    max-width: 1400px;
+    h1{
+        position: absolute;
+        left: 50%;
+        top: 5%;
+        transform: translateX(-50%);
+        font-size: 6rem;
+    }
     min-height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     #score{
-        width: 300px;
-        height: 650px;
-        background-color: green;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        margin-left: 3rem;
+        width: 25%;
+        min-width: 300px;
+        max-width: 400px;
+        height: 654px;
+        background-color: rgba(163, 223, 163, 0.678);
+        border: 1px solid black;
+        #timer{
+            font-size: 4rem;
+            margin: 2rem 0;
+            display: flex;
+            width: 200px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid black;
+        }
         #listOfScore{
-
+            margin-top: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 2rem;
             div{
-
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin: 2rem 0;
                 span{
-
+                    margin: 0 1rem ;
                 }
             }
         }
         button{
-
+            position: absolute;
+            bottom: 2%;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            font-size: 3rem;
+            padding: 1rem 1.5rem;
+            border: 1px solid black;
+            border-radius: 15px;
         }
     }
     #canvas{
+        margin: 0 1rem;
         canvas{
             position: relative;
             border: 1px solid black;
-            background-color: rgb(174, 206, 174);
+            background-color: rgb(121, 235, 121);
         }
     }
     #gameinfo{
-        height: 650px;
-        width: 300px;
-        background-color: green;
+        position: relative;
+        margin-right: 3rem;
+        width: 25%;
+        min-width: 300px;
+        max-width: 400px;
+        height: 654px;
+        background-color: rgba(163, 223, 163, 0.678);
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        #hits{
+            font-size: 4rem;
+            margin: 2rem 0;
+            display: flex;
+            width: 200px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid black;
+        }
+        #miss{
+            font-size: 4rem;
+            margin: 2rem 0;
+            display: flex;
+            width: 200px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid black;
+        }
+        .descript{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            h2{
+                font-size: 3rem;
+            }
+            p{
+                font-size: 1.6rem;
+            }
+        }
     }
     
 }

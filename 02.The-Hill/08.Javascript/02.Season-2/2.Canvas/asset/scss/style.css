@@ -10,9 +10,12 @@
 
 html {
   min-height: 100vh;
+  font-size: 62.5%;
 }
 
 main {
+  margin: 0 auto;
+  max-width: 1400px;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,21 +28,195 @@ main {
           align-items: center;
 }
 
+main h1 {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 6rem;
+}
+
 main #score {
-  width: 300px;
-  height: 650px;
-  background-color: green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  margin-left: 3rem;
+  width: 25%;
+  min-width: 300px;
+  max-width: 400px;
+  height: 654px;
+  background-color: rgba(163, 223, 163, 0.678);
+  border: 1px solid black;
+}
+
+main #score #timer {
+  font-size: 4rem;
+  margin: 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid black;
+}
+
+main #score #listOfScore {
+  margin-top: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 2rem;
+}
+
+main #score #listOfScore div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem 0;
+}
+
+main #score #listOfScore div span {
+  margin: 0 1rem;
+}
+
+main #score button {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 3rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+main #canvas {
+  margin: 0 1rem;
 }
 
 main #canvas canvas {
   position: relative;
   border: 1px solid black;
-  background-color: #aeceae;
+  background-color: #79eb79;
 }
 
 main #gameinfo {
-  height: 650px;
-  width: 300px;
-  background-color: green;
+  position: relative;
+  margin-right: 3rem;
+  width: 25%;
+  min-width: 300px;
+  max-width: 400px;
+  height: 654px;
+  background-color: rgba(163, 223, 163, 0.678);
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #gameinfo #hits {
+  font-size: 4rem;
+  margin: 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid black;
+}
+
+main #gameinfo #miss {
+  font-size: 4rem;
+  margin: 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid black;
+}
+
+main #gameinfo .descript {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #gameinfo .descript h2 {
+  font-size: 3rem;
+}
+
+main #gameinfo .descript p {
+  font-size: 1.6rem;
 }
 /*# sourceMappingURL=style.css.map */
