@@ -111,12 +111,15 @@ let numberOfPalindromes = (array) => {
 }
 
 let shortestWord = (array) => {
-    let teststring = "tttttttttttttttttttttt";
+    //let teststring = "tttttttttttttttttttttt";
     for (let i = 0; i < array.length; i++) {
         if (array[i].length < teststring.length)
         teststring=array[i]
     }
     return teststring
+    // let short = array.reduce((a, b) => {
+    //     return a.length <= b.length ? a : b;
+    // })
 }
 
 let longestWord = (array) => {
@@ -141,6 +144,7 @@ let repeatElements = (array) => {
 
 let stringToNumber = (string) => {
     return parseInt(string);
+    // renturn +string
 }
 
 let calculateAverage = (array) => {
@@ -154,6 +158,7 @@ let getElementsUntilGreaterThanFive = (array) => {
         arrayMove5.push(array[i])
     }
     return arrayMove5
+
 }
 
 let convertArrayToObject = (array) => {
